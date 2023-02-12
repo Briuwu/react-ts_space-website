@@ -1,0 +1,20 @@
+@use "../Utils/functions" as func;
+// FONTS
+@import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
+$ff: "Bellefair", serif;
+
+// COLORS
+$color-100: #ffffff;
+$color-500: #d0d6f9;
+$color-700: #0b0d17;
+
+// TYPOGRAPHY
+$text-heading-28: func.rem(28);
+$text-heading-32: func.rem(32);
+$text-heading-56: func.rem(56);
+$text-heading-100: func.rem(100);
+$text-heading-150: func.rem(150);
+
+$text-nav: func.rem(16);
+$text-sub-14: func.rem(14);
+$text-sub-28: func.rem(28);

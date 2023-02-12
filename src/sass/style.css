@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -104,6 +105,11 @@ h6 {
 
 .flex {
   display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
   gap: var(--gap, 1rem);
 }
 
