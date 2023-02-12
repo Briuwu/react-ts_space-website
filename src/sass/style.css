@@ -142,4 +142,95 @@ ul {
   padding-inline: clamp(1rem, 5vw, 3rem);
   max-width: 90rem;
   margin-inline: auto;
+}
+
+.header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+}
+.header__logo {
+  padding: 1rem;
+}
+.header__btn {
+  display: none;
+}
+.header .nav {
+  background: hsla(0deg, 0%, 100%, 0.1);
+  -webkit-backdrop-filter: blur(0.625rem);
+          backdrop-filter: blur(0.625rem);
+}
+.header .nav__items {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.header .nav__items span {
+  font-weight: 700;
+}
+
+@media (max-width: 43.75rem) {
+  body.hidden {
+    overflow: hidden;
+  }
+  .header__btn {
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    right: 2em;
+  }
+  .header .nav {
+    position: fixed;
+    inset: 0 0 0 30vw;
+    flex-direction: column;
+    --gap: 2rem;
+    padding: min(20vh, 8em) 2em;
+    transition: transform 300ms ease;
+  }
+  .header .nav[data-visible=false] {
+    transform: translateX(100%);
+  }
+  .header .nav[data-visible=true] {
+    transform: translateX(0);
+  }
+}
+@media (min-width: 43.75rem) {
+  .header .nav {
+    padding: 2em 3em;
+    --gap: 2.5em;
+  }
+  .header .nav span {
+    display: none;
+  }
+}
+@media (min-width: 1000px) {
+  .header .nav {
+    margin-block: 1em;
+    padding-left: 8em;
+    padding-right: 10em;
+  }
+}
+body {
+  font-family: "Bellefair", serif;
+  background-color: #0b0d17;
+  color: #ffffff;
+}
+
+.main {
+  background: no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  transition: background-image 0.5s ease;
+  padding-top: 120px;
+}
+.main.home {
+  background-image: url("../assets/home/background-home-mobile.jpg");
+}
+
+@media (min-width: 1000px) {
+  .main.home {
+    background-image: url("../assets/home/background-home-desktop.jpg");
+  }
 }/*# sourceMappingURL=style.css.map */

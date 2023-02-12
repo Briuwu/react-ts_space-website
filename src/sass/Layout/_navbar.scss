@@ -1,0 +1,91 @@
+@use "../Utils/functions" as func;
+@use "../Utils/variables" as var;
+
+$md: func.rem(700);
+
+.header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var.$text-nav;
+
+  &__logo {
+    padding: func.rem(16);
+  }
+
+  &__btn {
+    display: none;
+  }
+
+  .nav {
+    background: hsla(0, 0%, 100%, 0.1);
+    backdrop-filter: blur(func.rem(10));
+
+    &__items {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+
+      & span {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@media (max-width: $md) {
+  body.hidden {
+    overflow: hidden;
+  }
+  .header {
+    &__btn {
+      display: block;
+      position: absolute;
+      z-index: 9999;
+      right: 2em;
+    }
+    .nav {
+      position: fixed;
+      inset: 0 0 0 30vw;
+
+      flex-direction: column;
+      --gap: 2rem;
+
+      padding: min(20vh, 8em) 2em;
+
+      transition: transform 300ms ease;
+
+      &[data-visible="false"] {
+        transform: translateX(100%);
+      }
+
+      &[data-visible="true"] {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+@media (min-width: $md) {
+  .header {
+    .nav {
+      padding: 2em 3em;
+      --gap: 2.5em;
+
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .header {
+    .nav {
+      margin-block: 1em;
+      padding-left: 8em;
+      padding-right: 10em;
+    }
+  }
+}
