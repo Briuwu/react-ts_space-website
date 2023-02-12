@@ -1,0 +1,51 @@
+// hide the elements and make screen-reader only
+// read the content of the element
+@use "../Utils/variables" as var;
+@use "../Utils/functions" as func;
+
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap, func.rem(16));
+}
+
+a,
+button {
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+li,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding-inline: func.fluid(16, 5vw, 48);
+  max-width: func.rem(1440);
+  margin-inline: auto;
+}
