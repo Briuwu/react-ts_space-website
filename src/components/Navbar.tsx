@@ -3,6 +3,7 @@ import Logo from "../assets/shared/logo.svg";
 import MenuOpen from "../assets/shared/icon-hamburger.svg";
 import MenuClose from "../assets/shared/icon-close.svg";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -21,7 +22,9 @@ const Navbar = () => {
   return (
     <header className="header flex">
       <div className="header__logo">
-        <img src={Logo} alt="" />
+        <Link to={"/"}>
+          <img src={Logo} alt="" />
+        </Link>
       </div>
 
       <button

@@ -1,10 +1,24 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 interface NavItemsProps {
   toggle: Boolean;
 }
 
+const navItems = ["home", "destination", "crew", "technology"];
+
 const NavItems = ({ toggle }: NavItemsProps) => {
+  const navItemsElements = navItems.map((nav, i) => (
+    <li className="nav__items" key={i}>
+      <NavLink
+        to={`/${nav}`}
+        className={({ isActive }) => "link" + (isActive ? " active" : "")}
+      >
+        <span aria-hidden="true">0{i}</span> {nav}
+      </NavLink>
+    </li>
+  ));
+
   return (
     <nav>
       <ul
@@ -12,18 +26,7 @@ const NavItems = ({ toggle }: NavItemsProps) => {
         id="primary-nav"
         className="nav flex"
       >
-        <li className="nav__items">
-          <span aria-hidden="true">00</span> home
-        </li>
-        <li className="nav__items">
-          <span aria-hidden="true">01</span> destination
-        </li>
-        <li className="nav__items">
-          <span aria-hidden="true">02</span> crew
-        </li>
-        <li className="nav__items">
-          <span aria-hidden="true">03</span> technology
-        </li>
+        {navItemsElements}
       </ul>
     </nav>
   );
