@@ -1,5 +1,6 @@
 @use "../Utils/variables" as var;
 @use "../Utils/functions" as func;
+@use "../Utils/toolkits" as tool;
 
 body {
   font-family: var.$ff;
@@ -16,19 +17,14 @@ body {
   background-image: url("../assets/home/background-home-desktop.jpg");
 }
 
+@media (max-width: 700px) {
+  @include tool.background-images("mobile");
+}
+
+@media (min-width: 700px) {
+  @include tool.background-images("tablet");
+}
+
 @media (min-width: 1000px) {
-  .main {
-    &.home {
-      background-image: url("../assets/home/background-home-desktop.jpg");
-    }
-    &.destination {
-      background-image: url("../assets/destination/background-destination-desktop.jpg");
-    }
-    &.crew {
-      background-image: url("../assets/crew/background-crew-desktop.jpg");
-    }
-    &.technology {
-      background-image: url("../assets/technology/background-technology-desktop.jpg");
-    }
-  }
+  @include tool.background-images("desktop");
 }

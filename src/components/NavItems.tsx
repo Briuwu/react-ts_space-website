@@ -3,14 +3,16 @@ import { NavLink } from "react-router-dom";
 
 interface NavItemsProps {
   toggle: Boolean;
+  closeOnNavClick: () => void;
 }
 
 const navItems = ["home", "destination", "crew", "technology"];
 
-const NavItems = ({ toggle }: NavItemsProps) => {
+const NavItems = ({ toggle, closeOnNavClick }: NavItemsProps) => {
   const navItemsElements = navItems.map((nav, i) => (
     <li className="nav__items" key={i}>
       <NavLink
+        onClick={closeOnNavClick}
         to={`/${nav}`}
         className={({ isActive }) => "link" + (isActive ? " active" : "")}
       >

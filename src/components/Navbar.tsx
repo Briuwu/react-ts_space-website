@@ -19,10 +19,14 @@ const Navbar = () => {
     }
   };
 
+  function closeOnNavClick() {
+    setToggle(false);
+  }
+
   return (
     <header className="header flex">
       <div className="header__logo">
-        <Link to={"/"}>
+        <Link to="/">
           <img src={Logo} alt="" />
         </Link>
       </div>
@@ -36,7 +40,7 @@ const Navbar = () => {
         <img src={toggle ? MenuClose : MenuOpen} alt="" />
       </button>
 
-      <NavItems toggle={toggle} />
+      <NavItems toggle={toggle} closeOnNavClick={closeOnNavClick} />
     </header>
   );
 };
