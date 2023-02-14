@@ -1,7 +1,8 @@
 import React from "react";
+import Section from "../components/Section";
 
 const Technology = () => {
-  return <div>Technology</div>;
+  return <Section classProps="technology">Technology</Section>;
 };
 
 export default Technology;

@@ -1,7 +1,8 @@
 import React from "react";
+import Section from "../components/Section";
 
 const Crew = () => {
-  return <div>Crew</div>;
+  return <Section classProps="crew">Crew</Section>;
 };
 
 export default Crew;

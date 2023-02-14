@@ -240,17 +240,24 @@ body {
 
 .main {
   background: no-repeat center center;
-  background-size: cover;
+  background-size: 100% 100%;
   min-height: 100vh;
   transition: background-image 0.5s ease;
   padding-top: 120px;
-}
-.main.home {
-  background-image: url("../assets/home/background-home-mobile.jpg");
+  background-image: url("../assets/home/background-home-desktop.jpg");
 }
 
 @media (min-width: 1000px) {
   .main.home {
     background-image: url("../assets/home/background-home-desktop.jpg");
+  }
+  .main.destination {
+    background-image: url("../assets/destination/background-destination-desktop.jpg");
+  }
+  .main.crew {
+    background-image: url("../assets/crew/background-crew-desktop.jpg");
+  }
+  .main.technology {
+    background-image: url("../assets/technology/background-technology-desktop.jpg");
   }
 }/*# sourceMappingURL=style.css.map */

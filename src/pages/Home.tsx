@@ -1,7 +1,8 @@
 import React from "react";
+import Section from "../components/Section";
 
 const Home = () => {
-  return <div className="home">Home</div>;
+  return <Section classProps="home">Home</Section>;
 };
 
 export default Home;

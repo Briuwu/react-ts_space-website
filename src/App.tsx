@@ -1,11 +1,13 @@
 import Navbar from "./components/Navbar";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 function App() {
+  let { pathname } = useLocation();
+
   return (
     <div className="app">
       <Navbar />
-      <main className="main home">
+      <main className={`main ${pathname.replace("/", "")}`}>
         <Outlet />
       </main>
     </div>
