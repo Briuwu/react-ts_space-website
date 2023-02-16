@@ -1,15 +1,15 @@
 @mixin background-images($bg-type) {
   .main {
-    &.home {
+    &.theme--home {
       background-image: url("../assets/home/background-home-#{$bg-type}.jpg");
     }
-    &.destination {
+    &.theme--destination {
       background-image: url("../assets/destination/background-destination-#{$bg-type}.jpg");
     }
-    &.crew {
+    &.theme--crew {
       background-image: url("../assets/crew/background-crew-#{$bg-type}.jpg");
     }
-    &.technology {
+    &.theme--technology {
       background-image: url("../assets/technology/background-technology-#{$bg-type}.jpg");
     }
   }

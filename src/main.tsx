@@ -6,8 +6,14 @@ import Home from "./pages/Home";
 import Destination from "./pages/Destination";
 import Crew from "./pages/Crew";
 import Technology from "./pages/Technology";
+import ErrorPage from "./components/ErrorPage";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  redirect,
+  Navigate,
+} from "react-router-dom";
 
 import "./sass/style.css";
 
@@ -15,10 +21,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <Navigate to="/home" replace />,
       },
       {
         path: "/home",

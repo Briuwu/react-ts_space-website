@@ -1,0 +1,71 @@
+@use "../Utils/variables" as var;
+@use "../Utils/functions" as func;
+
+.home {
+  display: grid;
+  text-align: center;
+  gap: 5em;
+
+  &__desc {
+    text-transform: uppercase;
+    color: var.$color-500;
+
+    &-subhead {
+      font-family: var.$ff-barlow;
+      font-size: func.fluid(16, 2.5vw, 28);
+      letter-spacing: func.fluid(2.7, 5vw, 4.75);
+    }
+
+    &-heading {
+      font-size: func.fluid(80, 15vw, 150);
+      color: var.$color-100;
+    }
+
+    &-info {
+      text-transform: none;
+      font-size: func.fluid(15, 5vw, 18);
+      max-width: func.rem(444);
+      margin-inline: auto;
+    }
+  }
+
+  &__explore {
+    justify-self: center;
+    display: grid;
+    place-items: center;
+
+    aspect-ratio: 1;
+    width: func.fluid(150, 20vw, 274);
+
+    background-color: var.$color-100;
+    border-radius: 50%;
+
+    color: var.$color-700;
+    text-transform: uppercase;
+    font-size: func.fluid(20, 2vw, 32);
+  }
+}
+
+$md-lg: var.$md-lg;
+
+@media (min-width: $md-lg) {
+  .home {
+    margin-top: 7em;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-end;
+
+    &__desc {
+      text-align: left;
+
+      &-info {
+        max-width: func.rem(450);
+        margin-left: 0;
+      }
+    }
+
+    &__explore {
+      justify-self: flex-end;
+      margin-right: 2em;
+    }
+  }
+}

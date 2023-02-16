@@ -1,7 +1,10 @@
 @use "../Utils/functions" as func;
 // FONTS
 @import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
-$ff: "Bellefair", serif;
+$ff-bellefair: "Bellefair", serif;
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap");
+$ff-barlow: "Barlow Condensed", sans-serif;
 
 // COLORS
 $color-100: #ffffff;
@@ -18,3 +21,8 @@ $text-heading-150: func.rem(150);
 $text-nav: func.rem(16);
 $text-sub-14: func.rem(14);
 $text-sub-28: func.rem(28);
+
+// MEDIA QUERIES
+$md-sm: func.rem(700);
+$md-med: func.rem(800);
+$md-lg: func.rem(1000);

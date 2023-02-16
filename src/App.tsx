@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="app">
       <Navbar />
-      <main className={`main ${pathname.replace("/", "")}`}>
+      <main className={`main theme--${pathname.replace("/", "")}`}>
         <Outlet />
       </main>
     </div>

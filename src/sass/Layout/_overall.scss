@@ -3,7 +3,7 @@
 @use "../Utils/toolkits" as tool;
 
 body {
-  font-family: var.$ff;
+  font-family: var.$ff-bellefair;
   background-color: var.$color-700;
   color: var.$color-100;
 }
@@ -17,14 +17,27 @@ body {
   background-image: url("../assets/home/background-home-desktop.jpg");
 }
 
-@media (max-width: 700px) {
+$md-sm: var.$md-sm;
+$md-med: var.$md-med;
+$md-lg: var.$md-lg;
+
+@media (max-width: $md-sm) {
   @include tool.background-images("mobile");
+  .main {
+    background-image: url("../assets/home/background-home-mobile.jpg");
+  }
 }
 
-@media (min-width: 700px) {
+@media (min-width: $md-sm) {
   @include tool.background-images("tablet");
+  .main {
+    background-image: url("../assets/home/background-home-tablet.jpg");
+  }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: $md-lg) {
   @include tool.background-images("desktop");
+  .main {
+    background-image: url("../assets/home/background-home-desktop.jpg");
+  }
 }
