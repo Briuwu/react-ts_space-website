@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <header className="header flex">
       <div className="header__logo">
-        <Link to="/">
+        <Link to="/home">
           <img src={Logo} alt="" />
         </Link>
       </div>
