@@ -243,6 +243,24 @@ body {
   color: #ffffff;
 }
 
+.error {
+  display: flex;
+  gap: 0.75em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.error a {
+  background-color: #ffffff;
+  color: #0b0d17;
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+.error a:hover {
+  background-color: #d0d6f9;
+}
+
 .main {
   background: no-repeat center center;
   background-size: 100% 100%;
