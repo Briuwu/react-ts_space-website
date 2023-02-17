@@ -1,12 +1,13 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 
 import App from "./App";
-import Home from "./pages/Home";
-import Destination from "./pages/Destination";
-import Crew from "./pages/Crew";
-import Technology from "./pages/Technology";
+const Home = React.lazy(() => import("./pages/Home"));
+const Destination = React.lazy(() => import("./pages/Destination"));
+const Crew = React.lazy(() => import("./pages/Crew"));
+const Technology = React.lazy(() => import("./pages/Technology"));
 import ErrorPage from "./components/ErrorPage";
+import LoadingPage from "./components/LoadingPage";
 
 import {
   createBrowserRouter,
@@ -29,19 +30,35 @@ const router = createBrowserRouter([
       },
       {
         path: "/home",
-        element: <Home />,
+        element: (
+          <Suspense fallback={<LoadingPage />}>
+            <Home />
+          </Suspense>
+        ),
       },
       {
         path: "/destination",
-        element: <Destination />,
+        element: (
+          <Suspense fallback={<LoadingPage />}>
+            <Destination />
+          </Suspense>
+        ),
       },
       {
         path: "/crew",
-        element: <Crew />,
+        element: (
+          <Suspense fallback={<LoadingPage />}>
+            <Crew />
+          </Suspense>
+        ),
       },
       {
         path: "/technology",
-        element: <Technology />,
+        element: (
+          <Suspense fallback={<LoadingPage />}>
+            <Technology />
+          </Suspense>
+        ),
       },
     ],
   },
