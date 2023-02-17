@@ -12,7 +12,6 @@ import LoadingPage from "./components/LoadingPage";
 import {
   createBrowserRouter,
   RouterProvider,
-  redirect,
   Navigate,
 } from "react-router-dom";
 
@@ -30,35 +29,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/home",
-        element: (
-          <Suspense fallback={<LoadingPage />}>
-            <Home />
-          </Suspense>
-        ),
+        element: <Home />,
       },
       {
         path: "/destination",
-        element: (
-          <Suspense fallback={<LoadingPage />}>
-            <Destination />
-          </Suspense>
-        ),
+        element: <Destination />,
       },
       {
         path: "/crew",
-        element: (
-          <Suspense fallback={<LoadingPage />}>
-            <Crew />
-          </Suspense>
-        ),
+        element: <Crew />,
       },
       {
         path: "/technology",
-        element: (
-          <Suspense fallback={<LoadingPage />}>
-            <Technology />
-          </Suspense>
-        ),
+        element: <Technology />,
       },
     ],
   },
@@ -66,6 +49,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Suspense fallback={<LoadingPage />}>
+      <RouterProvider router={router} />
+    </Suspense>
   </React.StrictMode>
 );
