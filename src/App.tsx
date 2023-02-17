@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import { Outlet, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 function App() {
   let { pathname } = useLocation();
