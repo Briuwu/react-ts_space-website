@@ -1,5 +1,6 @@
 @use "../Utils/functions" as func;
 @use "../Utils/variables" as var;
+@use "../Utils/toolkits" as tool;
 
 $md: func.rem(700);
 
@@ -13,7 +14,7 @@ $md: func.rem(700);
   right: 0;
   justify-content: space-between;
   align-items: center;
-  font-size: var.$text-nav;
+  font-size: var.$text-sub-16;
 
   &__logo {
     padding: func.rem(16);
@@ -79,14 +80,7 @@ $md: func.rem(700);
       --gap: 2.5em;
 
       .link::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -2rem;
-        width: 100%;
-        height: 3px;
-        background-color: var.$color-100;
-        display: none;
+        @include tool.activeStyle();
       }
 
       .link.active::after {

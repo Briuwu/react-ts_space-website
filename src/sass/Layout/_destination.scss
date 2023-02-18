@@ -1,6 +1,97 @@
 @use "../Utils/functions" as func;
 @use "../Utils/variables" as var;
+@use "../Utils/toolkits" as tool;
 
 .destination {
   display: grid;
+  text-align: center;
+  gap: 1em;
+
+  &__container {
+    display: grid;
+    place-items: center;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-family: var.$ff-barlow;
+    font-size: var.$text-sub-16;
+    letter-spacing: 2.7px;
+    font-weight: 400;
+
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+
+    span {
+      color: var.$color-400;
+    }
+  }
+
+  &__img {
+    padding-inline: 5em;
+    padding-block: 2em;
+  }
+
+  &__selection {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    padding-bottom: 1em;
+
+    button {
+      position: relative;
+      text-transform: uppercase;
+      color: var.$color-500;
+      font-family: var.$ff-barlow;
+      font-size: var.$text-sub-14;
+
+      &.active {
+        color: var.$color-100;
+      }
+    }
+    button::after {
+      @include tool.activeStyle();
+      bottom: -0.25em;
+    }
+
+    button.active::after {
+      display: inline;
+    }
+  }
+
+  &__name {
+    text-transform: uppercase;
+    font-size: var.$text-heading-56;
+  }
+
+  &__desc {
+    color: var.$color-500;
+    font-size: var.$text-sub-16;
+  }
+
+  &__more {
+    border-top: 1px solid var.$color-400;
+    margin-block: func.rem(32);
+    padding-top: func.rem(32);
+    text-transform: uppercase;
+
+    display: flex;
+    flex-direction: column;
+    gap: func.rem(32);
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: func.rem(12);
+    }
+
+    .subhead {
+      color: var.$color-500;
+    }
+
+    .numbers {
+      font-size: var.$text-heading-28;
+    }
+  }
 }

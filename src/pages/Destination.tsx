@@ -22,7 +22,7 @@ const Destination = () => {
 
   return (
     <Section classProps="destination">
-      <h1>
+      <h1 className="destination__title">
         <span aria-hidden="true">01</span>pick your destination
       </h1>
       {selectedDestination.map((el) => (
@@ -43,12 +43,12 @@ const Destination = () => {
             <p className="destination__desc">{el.description}</p>
             <div className="destination__more">
               <div className="destination__more-distance">
-                <p>avg. distance</p>
-                <p>{el.distance}</p>
+                <p className="subhead">avg. distance</p>
+                <p className="numbers">{el.distance}</p>
               </div>
               <div className="destination__more-travel">
-                <p>est. travel time</p>
-                <p>{el.travel}</p>
+                <p className="subhead">est. travel time</p>
+                <p className="numbers">{el.travel}</p>
               </div>
             </div>
           </div>
