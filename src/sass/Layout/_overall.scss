@@ -2,6 +2,11 @@
 @use "../Utils/functions" as func;
 @use "../Utils/toolkits" as tool;
 
+$md-sm: var.$md-sm;
+$md-med: var.$md-med;
+$md-lg: var.$md-lg;
+
+// MISCS STYLING
 body {
   font-family: var.$ff-bellefair;
   background-color: var.$color-700;
@@ -37,6 +42,30 @@ body {
   min-height: 80vh;
 }
 
+// SECTION TITLES
+.section__title {
+  text-transform: uppercase;
+  font-family: var.$ff-barlow;
+  font-size: func.fluid(16, 4vw, 28);
+  letter-spacing: 2.7px;
+  font-weight: 400;
+
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+
+  span {
+    color: var.$color-400;
+  }
+}
+
+@media (min-width: $md-lg) {
+  .section__title {
+    justify-content: flex-start;
+  }
+}
+
+// SECTION MARGIN
 .main {
   background: no-repeat center center;
   background-size: 100% 100%;
@@ -46,10 +75,13 @@ body {
   background-image: url("../assets/home/background-home-desktop.jpg");
 }
 
-$md-sm: var.$md-sm;
-$md-med: var.$md-med;
-$md-lg: var.$md-lg;
+@media (min-width: $md-lg) {
+  .main > section {
+    margin-top: func.rem(66);
+  }
+}
 
+// BACKGROUND IMAGES FOR DIFFERENT VIEWPORTS
 @media (max-width: $md-sm) {
   @include tool.background-images("mobile");
 }

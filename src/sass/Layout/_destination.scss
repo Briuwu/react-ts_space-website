@@ -12,22 +12,6 @@
     place-items: center;
   }
 
-  &__title {
-    text-transform: uppercase;
-    font-family: var.$ff-barlow;
-    font-size: func.fluid(16, 4vw, 28);
-    letter-spacing: 2.7px;
-    font-weight: 400;
-
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-
-    span {
-      color: var.$color-400;
-    }
-  }
-
   &__img {
     padding-inline: 5em;
     padding-block: 2em;
@@ -105,15 +89,10 @@ $md-lg: var.$md-lg;
 
 @media (min-width: $md-lg) {
   .destination {
-    margin-top: func.rem(66);
     gap: func.rem(64);
 
     &__container {
       grid-template-columns: 1fr 1fr;
-    }
-
-    &__title {
-      justify-self: flex-start;
     }
 
     &__info {

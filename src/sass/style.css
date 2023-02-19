@@ -270,6 +270,25 @@ body {
   min-height: 80vh;
 }
 
+.section__title {
+  text-transform: uppercase;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(1rem, 4vw, 1.75rem);
+  letter-spacing: 2.7px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+.section__title span {
+  color: #383b4b;
+}
+
+@media (min-width: 62.5rem) {
+  .section__title {
+    justify-content: flex-start;
+  }
+}
 .main {
   background: no-repeat center center;
   background-size: 100% 100%;
@@ -279,6 +298,11 @@ body {
   background-image: url("../assets/home/background-home-desktop.jpg");
 }
 
+@media (min-width: 62.5rem) {
+  .main > section {
+    margin-top: 4.125rem;
+  }
+}
 @media (max-width: 43.75rem) {
   .main.theme--home {
     background-image: url("../assets/home/background-home-mobile.jpg");
@@ -385,19 +409,6 @@ body {
   display: grid;
   place-items: center;
 }
-.destination__title {
-  text-transform: uppercase;
-  font-family: "Barlow Condensed", sans-serif;
-  font-size: clamp(1rem, 4vw, 1.75rem);
-  letter-spacing: 2.7px;
-  font-weight: 400;
-  display: flex;
-  justify-content: center;
-  gap: 1em;
-}
-.destination__title span {
-  color: #383b4b;
-}
 .destination__img {
   padding-inline: 5em;
   padding-block: 2em;
@@ -467,14 +478,10 @@ body {
 
 @media (min-width: 62.5rem) {
   .destination {
-    margin-top: 4.125rem;
     gap: 4rem;
   }
   .destination__container {
     grid-template-columns: 1fr 1fr;
-  }
-  .destination__title {
-    justify-self: flex-start;
   }
   .destination__info {
     text-align: left;

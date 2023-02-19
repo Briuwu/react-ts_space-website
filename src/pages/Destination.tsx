@@ -22,7 +22,7 @@ const Destination = () => {
 
   return (
     <Section classProps="destination">
-      <h1 className="destination__title">
+      <h1 className="section__title">
         <span aria-hidden="true">01</span>pick your destination
       </h1>
       {selectedDestination.map((el) => (
