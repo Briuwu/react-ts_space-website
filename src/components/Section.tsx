@@ -6,7 +6,7 @@ interface sectionProps {
 }
 
 const Section = ({ children, classProps }: sectionProps) => {
-  return <div className={`${classProps} container`}>{children}</div>;
+  return <section className={`${classProps} container`}>{children}</section>;
 };
 
 export default Section;

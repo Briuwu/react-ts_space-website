@@ -15,7 +15,7 @@
   &__title {
     text-transform: uppercase;
     font-family: var.$ff-barlow;
-    font-size: var.$text-sub-16;
+    font-size: func.fluid(16, 4vw, 28);
     letter-spacing: 2.7px;
     font-weight: 400;
 
@@ -44,12 +44,13 @@
       text-transform: uppercase;
       color: var.$color-500;
       font-family: var.$ff-barlow;
-      font-size: var.$text-sub-14;
+      font-size: func.fluid(14, 2.5vw, 16);
 
       &.active {
         color: var.$color-100;
       }
     }
+
     button::after {
       @include tool.activeStyle();
       bottom: -0.25em;
@@ -62,12 +63,15 @@
 
   &__name {
     text-transform: uppercase;
-    font-size: var.$text-heading-56;
+    font-size: func.fluid(56, 10vw, 100);
+    font-weight: 400;
   }
 
   &__desc {
     color: var.$color-500;
     font-size: var.$text-sub-16;
+    max-width: func.rem(573);
+    margin-inline: auto;
   }
 
   &__more {
@@ -88,10 +92,42 @@
 
     .subhead {
       color: var.$color-500;
+      font-size: var.$text-sub-14;
     }
 
     .numbers {
       font-size: var.$text-heading-28;
+    }
+  }
+}
+
+$md-lg: var.$md-lg;
+
+@media (min-width: $md-lg) {
+  .destination {
+    margin-top: func.rem(66);
+    gap: func.rem(64);
+
+    &__container {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &__title {
+      justify-self: flex-start;
+    }
+
+    &__info {
+      text-align: left;
+    }
+
+    &__selection {
+      justify-content: start;
+      gap: func.rem(36);
+    }
+
+    &__more {
+      flex-direction: row;
+      gap: func.rem(79);
     }
   }
 }

@@ -32,6 +32,7 @@ const Destination = () => {
             <div className="destination__selection">
               {destinationChoices.map((each) => (
                 <button
+                  key={each}
                   className={each === select ? "active" : ""}
                   onClick={() => setSelect(each)}
                 >
