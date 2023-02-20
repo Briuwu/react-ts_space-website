@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import Section from "../components/Section";
 import DATA from "../data/data.json";
 
@@ -31,7 +31,7 @@ const Crew = () => {
             <img src={selectedImg} alt={el.name} />
           </div>
           <div className="crew__info">
-            <div className="crew__selection">
+            <div className="crew__selection flex">
               {crewSelections.map((each) => (
                 <button
                   className={`crew__selection-each ${

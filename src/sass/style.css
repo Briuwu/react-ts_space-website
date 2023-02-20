@@ -416,7 +416,6 @@ body {
   height: clamp(10.625rem, 50vw, 27.8125rem);
 }
 .destination__selection {
-  display: flex;
   justify-content: center;
   gap: 2em;
   padding-bottom: 1em;
@@ -461,12 +460,10 @@ body {
   margin-block: 2rem;
   padding-top: 2rem;
   text-transform: uppercase;
-  display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 .destination__more > div {
-  display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
@@ -516,7 +513,6 @@ body {
   margin-inline: auto;
 }
 .crew__selection {
-  display: flex;
   justify-content: center;
   gap: 1em;
   margin-block: 1em;

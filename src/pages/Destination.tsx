@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import Section from "../components/Section";
 import DATA from "../data/data.json";
 
@@ -29,7 +29,7 @@ const Destination = () => {
         <div className="destination__container" key={el.name}>
           <img className="destination__img" src={selectedImg} alt={el.name} />
           <div className="destination__info">
-            <div className="destination__selection">
+            <div className="destination__selection flex">
               {destinationChoices.map((each) => (
                 <button
                   key={each}
@@ -42,12 +42,12 @@ const Destination = () => {
             </div>
             <h2 className="destination__name">{el.name}</h2>
             <p className="destination__desc">{el.description}</p>
-            <div className="destination__more">
-              <div className="destination__more-distance">
+            <div className="destination__more flex">
+              <div className="destination__more-distance flex">
                 <p className="subhead">avg. distance</p>
                 <p className="numbers">{el.distance}</p>
               </div>
-              <div className="destination__more-travel">
+              <div className="destination__more-travel flex">
                 <p className="subhead">est. travel time</p>
                 <p className="numbers">{el.travel}</p>
               </div>

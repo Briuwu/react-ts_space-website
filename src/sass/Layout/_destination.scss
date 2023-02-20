@@ -19,7 +19,6 @@
   }
 
   &__selection {
-    display: flex;
     justify-content: center;
     gap: 2em;
     padding-bottom: 1em;
@@ -65,12 +64,10 @@
     padding-top: func.rem(32);
     text-transform: uppercase;
 
-    display: flex;
     flex-direction: column;
     gap: func.rem(32);
 
     > div {
-      display: flex;
       flex-direction: column;
       gap: func.rem(12);
     }
