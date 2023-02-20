@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Section from "../components/Section";
 import DATA from "../data/data.json";
 

@@ -4,10 +4,10 @@ import DATA from "../data/data.json";
 
 const Destination = () => {
   const [destination, setDestination] = useState(DATA.destinations);
-  const [select, setSelect] = useState("Moon");
+  const [selectDestination, setSelectDestination] = useState("Moon");
 
   const selectedDestination = destination.filter((prev) => {
-    return prev.name === select;
+    return prev.name === selectDestination;
   });
 
   const selectedImg = selectedDestination
@@ -33,8 +33,8 @@ const Destination = () => {
               {destinationChoices.map((each) => (
                 <button
                   key={each}
-                  className={each === select ? "active" : ""}
-                  onClick={() => setSelect(each)}
+                  className={each === selectDestination ? "active" : ""}
+                  onClick={() => setSelectDestination(each)}
                 >
                   {each}
                 </button>

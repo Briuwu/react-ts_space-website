@@ -34,7 +34,7 @@ $md-lg: var.$md-lg;
 
     &-each {
       aspect-ratio: 1;
-      width: func.rem(10);
+      width: func.fluid(10, 5vw, 15);
       border-radius: 50%;
       background-color: var.$color-400;
 
@@ -46,7 +46,7 @@ $md-lg: var.$md-lg;
 
   &__role {
     text-transform: uppercase;
-    font-size: var.$text-sub-16;
+    font-size: func.fluid(16, 5vw, 32);
     color: var.$color-100;
     opacity: 0.5;
   }
@@ -54,12 +54,12 @@ $md-lg: var.$md-lg;
   &__name {
     text-transform: uppercase;
     font-weight: 400;
-    font-size: func.rem(24);
+    font-size: func.fluid(24, 5vw, 56);
   }
 
   &__bio {
     color: var.$color-500;
-    font-size: func.rem(15);
+    font-size: func.fluid(15, 2.5vw, 18);
     max-width: func.rem(458);
   }
 }
@@ -73,6 +73,38 @@ $md-lg: var.$md-lg;
     &__img {
       border: none;
       grid-row: 2;
+    }
+  }
+}
+
+@media (min-width: $md-lg) {
+  .crew {
+    gap: 0;
+
+    &__container {
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+    }
+
+    &__img {
+      grid-row: 1;
+      grid-column: 2;
+    }
+
+    &__info {
+      align-items: start;
+      justify-content: start;
+      text-align: left;
+    }
+
+    &__name {
+      margin-bottom: func.rem(27);
+    }
+
+    &__selection {
+      justify-content: start;
+      position: absolute;
+      bottom: 2em;
     }
   }
 }
