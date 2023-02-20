@@ -27,7 +27,9 @@ const Crew = () => {
       </h1>
       {selectedCrew.map((el) => (
         <div className="crew__container" key={el.name}>
-          <img className="crew__img" src={selectedImg} alt={el.name} />
+          <div className="crew__img">
+            <img src={selectedImg} alt={el.name} />
+          </div>
           <div className="crew__info">
             <div className="crew__selection">
               {crewSelections.map((each) => (

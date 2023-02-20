@@ -2,6 +2,9 @@
 @use "../Utils/functions" as func;
 @use "../Utils/toolkits" as tool;
 
+$md-sm: var.$md-sm;
+$md-lg: var.$md-lg;
+
 .crew {
   display: grid;
   gap: 2em;
@@ -15,9 +18,12 @@
   }
 
   &__img {
-    padding-inline: 5em;
     border-bottom: 2px solid var.$color-400;
-    margin-inline: auto;
+
+    img {
+      height: func.fluid(223, 60vw, 712);
+      margin-inline: auto;
+    }
   }
 
   &__selection {
@@ -54,5 +60,19 @@
   &__bio {
     color: var.$color-500;
     font-size: func.rem(15);
+    max-width: func.rem(458);
+  }
+}
+
+@media (min-width: $md-sm) {
+  .crew {
+    &__container {
+      gap: 1em;
+    }
+
+    &__img {
+      border: none;
+      grid-row: 2;
+    }
   }
 }

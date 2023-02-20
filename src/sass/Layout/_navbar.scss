@@ -2,7 +2,7 @@
 @use "../Utils/variables" as var;
 @use "../Utils/toolkits" as tool;
 
-$md: func.rem(700);
+$md: var.$md-sm;
 
 .header__container {
   max-width: 1440px;
@@ -27,6 +27,7 @@ $md: func.rem(700);
   .nav {
     background: hsla(0, 0%, 100%, 0.1);
     backdrop-filter: blur(func.rem(10));
+    z-index: 999;
 
     &__items {
       position: relative;
@@ -40,7 +41,7 @@ $md: func.rem(700);
   }
 }
 
-@media (max-width: $md) {
+@media (max-width: 699px) {
   body.hidden {
     overflow: hidden;
   }
@@ -48,8 +49,8 @@ $md: func.rem(700);
     &__btn {
       display: block;
       position: absolute;
-      z-index: 9999;
       right: 2em;
+      z-index: 9999;
     }
     .nav {
       position: fixed;
@@ -73,7 +74,7 @@ $md: func.rem(700);
   }
 }
 
-@media (min-width: $md) {
+@media (min-width: 700px) {
   .header {
     .nav {
       padding: 2em 3em;

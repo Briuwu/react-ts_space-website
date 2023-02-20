@@ -21,6 +21,11 @@ const Navbar = () => {
 
   function closeOnNavClick() {
     setToggle(false);
+    if (!toggle) {
+      document.body.classList.add("hidden");
+    } else {
+      document.body.classList.remove("hidden");
+    }
   }
 
   return (

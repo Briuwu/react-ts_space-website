@@ -3,7 +3,6 @@
 @use "../Utils/toolkits" as tool;
 
 $md-sm: var.$md-sm;
-$md-med: var.$md-med;
 $md-lg: var.$md-lg;
 
 // MISCS STYLING
@@ -59,7 +58,7 @@ body {
   }
 }
 
-@media (min-width: $md-lg) {
+@media (min-width: 700px) {
   .section__title {
     justify-content: flex-start;
   }

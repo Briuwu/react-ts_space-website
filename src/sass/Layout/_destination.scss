@@ -10,11 +10,11 @@
   &__container {
     display: grid;
     place-items: center;
+    gap: 1em;
   }
 
   &__img {
-    padding-inline: 5em;
-    padding-block: 2em;
+    height: func.fluid(170, 50vw, 445);
   }
 
   &__selection {
