@@ -494,4 +494,50 @@ body {
     flex-direction: row;
     gap: 4.9375rem;
   }
+}
+.crew {
+  display: grid;
+  gap: 2em;
+}
+.crew__container {
+  display: grid;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.crew__img {
+  padding-inline: 5em;
+  border-bottom: 2px solid #383b4b;
+  margin-inline: auto;
+}
+.crew__selection {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-block: 1em;
+}
+.crew__selection-each {
+  aspect-ratio: 1;
+  width: 0.625rem;
+  border-radius: 50%;
+  background-color: #383b4b;
+}
+.crew__selection-each.active {
+  background-color: #ffffff;
+}
+.crew__role {
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: #ffffff;
+  opacity: 0.5;
+}
+.crew__name {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+.crew__bio {
+  color: #d0d6f9;
+  font-size: 0.9375rem;
 }/*# sourceMappingURL=style.css.map */

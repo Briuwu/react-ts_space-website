@@ -27,12 +27,18 @@ const Crew = () => {
       </h1>
       {selectedCrew.map((el) => (
         <div className="crew__container" key={el.name}>
-          <img src={selectedImg} alt="" />
+          <img className="crew__img" src={selectedImg} alt={el.name} />
           <div className="crew__info">
             <div className="crew__selection">
               {crewSelections.map((each) => (
-                <button className="crew__selection-each" key={each}>
-                  <span>Select {each}</span>
+                <button
+                  className={`crew__selection-each ${
+                    each === selectCrew ? "active" : ""
+                  }`}
+                  key={each}
+                  onClick={() => setSelectCrew(each)}
+                >
+                  <span className="sr-only">Select {each}</span>
                 </button>
               ))}
             </div>
