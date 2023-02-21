@@ -1,0 +1,40 @@
+@use "../Utils/functions" as func;
+@use "../Utils/variables" as var;
+@use "../Utils/toolkits" as tool;
+
+.technology {
+  text-align: center;
+  gap: 1em;
+
+  &__info {
+    gap: 1em;
+  }
+
+  &__selection {
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    margin-top: func.rem(34);
+
+    &-each {
+      aspect-ratio: 1;
+      width: func.rem(40);
+      border: 1px solid var.$color-100;
+      border-radius: 50%;
+
+      &.active {
+        background-color: var.$color-100;
+        color: var.$color-700;
+      }
+    }
+  }
+
+  &__desc {
+    padding-inline: 1em;
+    span {
+      text-transform: uppercase;
+      color: var.$color-500;
+      font-size: func.rem(14);
+    }
+  }
+}

@@ -4,7 +4,7 @@ import Section from "../components/Section";
 
 const Home = () => {
   return (
-    <Section classProps="home">
+    <Section classProps="home grid container">
       <div className="home__desc">
         <p className="home__desc-subhead">So, you want to travel to</p>
         <h1 className="home__desc-heading">space</h1>
@@ -15,7 +15,7 @@ const Home = () => {
           experience!
         </p>
       </div>
-      <Link to="/destination" className="home__explore">
+      <Link to="/destination" className="home__explore grid">
         <span>explore</span>
       </Link>
     </Section>

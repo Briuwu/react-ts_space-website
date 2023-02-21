@@ -41,7 +41,7 @@ body {
   min-height: 80vh;
 }
 
-// SECTION TITLES
+// SECTION Stylings
 .section__title {
   text-transform: uppercase;
   font-family: var.$ff-barlow;
@@ -56,6 +56,19 @@ body {
   span {
     color: var.$color-400;
   }
+}
+
+.section__heading {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: func.fluid(24, 5vw, 56);
+}
+
+.section__desc {
+  color: var.$color-500;
+  font-size: func.fluid(15, 2.5vw, 18);
+  max-width: func.rem(458);
+  margin-inline: auto;
 }
 
 @media (min-width: 700px) {

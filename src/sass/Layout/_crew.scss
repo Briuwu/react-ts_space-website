@@ -6,11 +6,9 @@ $md-sm: var.$md-sm;
 $md-lg: var.$md-lg;
 
 .crew {
-  display: grid;
   gap: 2em;
 
   &__container {
-    display: grid;
     gap: 1em;
     justify-content: center;
     align-items: center;
@@ -54,18 +52,6 @@ $md-lg: var.$md-lg;
     color: var.$color-100;
     opacity: 0.5;
   }
-
-  &__name {
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: func.fluid(24, 5vw, 56);
-  }
-
-  &__bio {
-    color: var.$color-500;
-    font-size: func.fluid(15, 2.5vw, 18);
-    max-width: func.rem(458);
-  }
 }
 
 @media (min-width: $md-sm) {
@@ -101,8 +87,12 @@ $md-lg: var.$md-lg;
       text-align: left;
     }
 
-    &__name {
+    .section__heading {
       margin-bottom: func.rem(27);
+    }
+
+    .section__desc {
+      margin: initial;
     }
 
     &__selection {

@@ -2,7 +2,6 @@
 @use "../Utils/functions" as func;
 
 .home {
-  display: grid;
   text-align: center;
   gap: 5em;
 
@@ -31,7 +30,6 @@
 
   &__explore {
     justify-self: center;
-    display: grid;
     place-items: center;
 
     aspect-ratio: 1;

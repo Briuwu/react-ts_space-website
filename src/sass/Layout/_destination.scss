@@ -3,12 +3,10 @@
 @use "../Utils/toolkits" as tool;
 
 .destination {
-  display: grid;
   text-align: center;
   gap: 1em;
 
   &__container {
-    display: grid;
     place-items: center;
     gap: 1em;
     margin-bottom: 2em;
@@ -43,19 +41,6 @@
     button.active::after {
       display: inline;
     }
-  }
-
-  &__name {
-    text-transform: uppercase;
-    font-size: func.fluid(56, 10vw, 100);
-    font-weight: 400;
-  }
-
-  &__desc {
-    color: var.$color-500;
-    font-size: var.$text-sub-16;
-    max-width: func.rem(573);
-    margin-inline: auto;
   }
 
   &__more {

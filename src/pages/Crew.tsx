@@ -31,20 +31,20 @@ const Crew = () => {
   ));
 
   return (
-    <Section classProps="crew">
+    <Section classProps="crew grid container">
       <h1 className="section__title">
         <span aria-hidden="true">02</span>meet your crew
       </h1>
       {selectedCrew.map((el) => (
-        <div className="crew__container" key={el.name}>
+        <div className="crew__container grid" key={el.name}>
           <div className="crew__img">
             <img src={selectedImg} alt={el.name} />
           </div>
           <div className="crew__info">
             <div className="crew__selection flex">{crewSelectionsElement}</div>
             <p className="crew__role">{el.role}</p>
-            <h2 className="crew__name">{el.name}</h2>
-            <p className="crew__bio">{el.bio}</p>
+            <h2 className="section__heading">{el.name}</h2>
+            <p className="section__desc">{el.bio}</p>
           </div>
         </div>
       ))}

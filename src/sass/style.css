@@ -285,6 +285,19 @@ body {
   color: #383b4b;
 }
 
+.section__heading {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 5vw, 3.5rem);
+}
+
+.section__desc {
+  color: #d0d6f9;
+  font-size: clamp(0.9375rem, 2.5vw, 1.125rem);
+  max-width: 28.625rem;
+  margin-inline: auto;
+}
+
 @media (min-width: 700px) {
   .section__title {
     justify-content: flex-start;
@@ -347,7 +360,6 @@ body {
   }
 }
 .home {
-  display: grid;
   text-align: center;
   gap: 5em;
 }
@@ -372,7 +384,6 @@ body {
 }
 .home__explore {
   justify-self: center;
-  display: grid;
   place-items: center;
   aspect-ratio: 1;
   width: clamp(9.375rem, 20vw, 17.125rem);
@@ -402,12 +413,10 @@ body {
   }
 }
 .destination {
-  display: grid;
   text-align: center;
   gap: 1em;
 }
 .destination__container {
-  display: grid;
   place-items: center;
   gap: 1em;
   margin-bottom: 2em;
@@ -443,17 +452,6 @@ body {
 }
 .destination__selection button.active::after {
   display: inline;
-}
-.destination__name {
-  text-transform: uppercase;
-  font-size: clamp(3.5rem, 10vw, 6.25rem);
-  font-weight: 400;
-}
-.destination__desc {
-  color: #d0d6f9;
-  font-size: 1rem;
-  max-width: 35.8125rem;
-  margin-inline: auto;
 }
 .destination__more {
   border-top: 1px solid #383b4b;
@@ -495,11 +493,9 @@ body {
   }
 }
 .crew {
-  display: grid;
   gap: 2em;
 }
 .crew__container {
-  display: grid;
   gap: 1em;
   justify-content: center;
   align-items: center;
@@ -536,16 +532,6 @@ body {
   color: #ffffff;
   opacity: 0.5;
 }
-.crew__name {
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: clamp(1.5rem, 5vw, 3.5rem);
-}
-.crew__bio {
-  color: #d0d6f9;
-  font-size: clamp(0.9375rem, 2.5vw, 1.125rem);
-  max-width: 28.625rem;
-}
 
 @media (min-width: 43.75rem) {
   .crew__container {
@@ -573,12 +559,46 @@ body {
     justify-content: start;
     text-align: left;
   }
-  .crew__name {
+  .crew .section__heading {
     margin-bottom: 1.6875rem;
+  }
+  .crew .section__desc {
+    margin: initial;
   }
   .crew__selection {
     justify-content: start;
     position: absolute;
     bottom: 2em;
   }
+}
+.technology {
+  text-align: center;
+  gap: 1em;
+}
+.technology__info {
+  gap: 1em;
+}
+.technology__selection {
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 2.125rem;
+}
+.technology__selection-each {
+  aspect-ratio: 1;
+  width: 2.5rem;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+}
+.technology__selection-each.active {
+  background-color: #ffffff;
+  color: #0b0d17;
+}
+.technology__desc {
+  padding-inline: 1em;
+}
+.technology__desc span {
+  text-transform: uppercase;
+  color: #d0d6f9;
+  font-size: 0.875rem;
 }/*# sourceMappingURL=style.css.map */
