@@ -3,12 +3,19 @@ import Section from "../components/Section";
 import { motion, AnimatePresence } from "framer-motion";
 import { container, slideUpItem, slideLeftItem } from "../Transitions";
 
+import launchPortrait from "../assets/technology/image-launch-vehicle-portrait.jpg";
+import launchLandscape from "../assets/technology/image-launch-vehicle-landscape.jpg";
+import sportPortrait from "../assets/technology/image-spaceport-portrait.jpg";
+import sportLandscape from "../assets/technology/image-spaceport-landscape.jpg";
+import capsulePortrait from "../assets/technology/image-space-capsule-portrait.jpg";
+import capsuleLandscape from "../assets/technology/image-space-capsule-landscape.jpg";
+
 const technologyData = [
   {
     name: "Launch vehicle",
     images: {
-      portrait: "./assets/technology/image-launch-vehicle-portrait.jpg",
-      landscape: "./assets/technology/image-launch-vehicle-landscape.jpg",
+      portrait: launchPortrait,
+      landscape: launchLandscape,
     },
     description:
       "A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!",
@@ -16,8 +23,8 @@ const technologyData = [
   {
     name: "Spaceport",
     images: {
-      portrait: "./assets/technology/image-spaceport-portrait.jpg",
-      landscape: "./assets/technology/image-spaceport-landscape.jpg",
+      portrait: sportPortrait,
+      landscape: sportLandscape,
     },
     description:
       "A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch.",
@@ -25,8 +32,8 @@ const technologyData = [
   {
     name: "Space capsule",
     images: {
-      portrait: "./assets/technology/image-space-capsule-portrait.jpg",
-      landscape: "./assets/technology/image-space-capsule-landscape.jpg",
+      portrait: capsulePortrait,
+      landscape: capsuleLandscape,
     },
     description:
       "A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during the flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained.",
@@ -40,21 +47,6 @@ const Technology = () => {
   const selectedTechnology = technology.filter((eachTech) => {
     return eachTech.name === selectTechnology;
   });
-
-  const selectedImgLandscape = selectedTechnology
-    .map((eachTech) => {
-      let image = eachTech.images.landscape.replace(".", "");
-      let imageSrc = "..".concat(image);
-      return imageSrc;
-    })
-    .toString();
-  const selectedImgPortrait = selectedTechnology
-    .map((eachTech) => {
-      let image = eachTech.images.portrait.replace(".", "");
-      let imageSrc = "..".concat(image);
-      return imageSrc;
-    })
-    .toString();
 
   const technologyChoices = technology.map((eachTech) => eachTech.name);
 
@@ -90,13 +82,13 @@ const Technology = () => {
             <motion.img
               variants={slideLeftItem}
               className="technology__img mobile"
-              src={selectedImgLandscape}
+              src={el.images.landscape}
               alt={el.name}
             />
             <motion.img
               variants={slideLeftItem}
               className="technology__img desktop"
-              src={selectedImgPortrait}
+              src={el.images.portrait}
               alt={el.name}
             />
             <div className="technology__info flex">
