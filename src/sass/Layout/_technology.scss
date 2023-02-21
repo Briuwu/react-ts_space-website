@@ -2,23 +2,38 @@
 @use "../Utils/variables" as var;
 @use "../Utils/toolkits" as tool;
 
+$md-lg: var.$md-lg;
+
 .technology {
   text-align: center;
   gap: 1em;
 
   &__info {
     gap: 1em;
+    flex-direction: column;
+  }
+
+  &__img {
+    margin-inline: auto;
+
+    &.desktop {
+      display: none;
+    }
+
+    &.mobile {
+      height: func.fluid(170, 42vw, 310);
+    }
   }
 
   &__selection {
     align-items: center;
     justify-content: center;
-    gap: 1em;
+    gap: func.fluid(16, 5vw, 32);
     margin-top: func.rem(34);
 
     &-each {
       aspect-ratio: 1;
-      width: func.rem(40);
+      width: func.fluid(40, 5vw, 80);
       border: 1px solid var.$color-100;
       border-radius: 50%;
 
@@ -34,7 +49,55 @@
     span {
       text-transform: uppercase;
       color: var.$color-500;
-      font-size: func.rem(14);
+      font-size: func.fluid(14, 5vw, 16);
+    }
+  }
+}
+
+@media (min-width: $md-lg) {
+  .technology {
+    text-align: left;
+    max-width: 1440px;
+    padding-inline: func.fluid(16, 5vw, 52);
+    margin-inline: auto;
+
+    .section__title {
+      padding-inline: func.fluid(16, 5vw, 52);
+      max-width: func.rem(1440);
+      margin-right: auto;
+    }
+
+    &__info {
+      justify-self: center;
+      flex-direction: row;
+      align-items: center;
+      gap: func.rem(80);
+    }
+
+    &__selection {
+      flex-direction: column;
+    }
+
+    &__img {
+      grid-area: 1 / 2;
+      &.desktop {
+        display: inline-block;
+        width: func.rem(515);
+      }
+
+      &.mobile {
+        display: none;
+        height: initial;
+      }
+    }
+
+    &__container {
+      grid-template-columns: 1fr max-content;
+      margin-bottom: func.rem(80);
+    }
+
+    .section__heading {
+      margin-bottom: func.rem(17);
     }
   }
 }

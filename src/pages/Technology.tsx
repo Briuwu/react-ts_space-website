@@ -17,6 +17,13 @@ const Technology = () => {
       return imageSrc;
     })
     .toString();
+  const selectedImgPortrait = selectedTechnology
+    .map((eachTech) => {
+      let image = eachTech.images.portrait.replace(".", "");
+      let imageSrc = "./src".concat(image);
+      return imageSrc;
+    })
+    .toString();
 
   const technologyChoices = technology.map((eachTech) => eachTech.name);
 
@@ -40,8 +47,17 @@ const Technology = () => {
       </h1>
       {selectedTechnology.map((el) => (
         <div className="technology__container grid" key={el.name}>
-          <img className="technology__img" src={selectedImgLandscape} alt="" />
-          <div className="technology__info grid">
+          <img
+            className="technology__img mobile"
+            src={selectedImgLandscape}
+            alt={el.name}
+          />
+          <img
+            className="technology__img desktop"
+            src={selectedImgPortrait}
+            alt={el.name}
+          />
+          <div className="technology__info flex">
             <div className="technology__selection flex">
               {technologyChoicesElement}
             </div>
