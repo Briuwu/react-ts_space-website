@@ -16,6 +16,7 @@
     }
 
     &-heading {
+      font-family: var.$ff-bellefair;
       font-size: func.fluid(80, 15vw, 150);
       color: var.$color-100;
     }

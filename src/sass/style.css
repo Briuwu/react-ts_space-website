@@ -369,6 +369,7 @@ body {
   letter-spacing: clamp(0.16875rem, 5vw, 0.296875rem);
 }
 .home__desc-heading {
+  font-family: "Bellefair", serif;
   font-size: clamp(5rem, 15vw, 9.375rem);
   color: #ffffff;
 }

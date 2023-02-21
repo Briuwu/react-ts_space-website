@@ -11,10 +11,10 @@ import "./sass/style.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <Suspense fallback={<LoadingPage />}>
-      <Router>
+    <Router>
+      <Suspense fallback={<LoadingPage />}>
         <App />
-      </Router>
-    </Suspense>
+      </Suspense>
+    </Router>
   </React.StrictMode>
 );
