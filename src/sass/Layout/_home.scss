@@ -29,6 +29,7 @@
   }
 
   &__explore {
+    position: relative;
     justify-self: center;
     place-items: center;
 
@@ -41,6 +42,17 @@
     color: var.$color-700;
     text-transform: uppercase;
     font-size: func.fluid(20, 2vw, 32);
+
+    transition: outline 200ms cubic-bezier(0.68, -0.55, 0.27, 1.55),
+      transform 200ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+    &:hover {
+      transform: scale(0.9);
+      outline-width: func.fluid(30, 5vw, 70);
+      outline-style: solid;
+      outline-color: hsla(0, 0%, 100%, 0.5);
+      outline-offset: -3px;
+    }
   }
 }
 
