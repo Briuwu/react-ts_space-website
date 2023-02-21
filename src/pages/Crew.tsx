@@ -38,14 +38,14 @@ const Crew = () => {
         <span aria-hidden="true">02</span>meet your crew
       </motion.h1>
       {selectedCrew.map((el) => (
-        <AnimatePresence mode="wait">
+        <AnimatePresence key={el.name} mode="wait">
           <motion.div
+            key={el.name}
             variants={container}
             initial="hidden"
             animate="visible"
             exit="exit"
             className="crew__container grid"
-            key={el.name}
           >
             <div className="crew__img">
               <motion.img

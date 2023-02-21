@@ -40,7 +40,7 @@ const Destination = () => {
         <span aria-hidden="true">01</span>pick your destination
       </motion.h1>
       {selectedDestination.map((el) => (
-        <AnimatePresence mode="wait">
+        <AnimatePresence key={el.name} mode="wait">
           <motion.div
             variants={container}
             initial="hidden"

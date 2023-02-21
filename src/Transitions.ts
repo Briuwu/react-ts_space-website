@@ -5,6 +5,7 @@ export const container = {
   visible: {
     opacity: 1,
     transition: {
+      delayChildren: 0.2,
       staggerChildren: 0.1,
     },
   },
@@ -42,7 +43,7 @@ export const slideUpItem = {
 
 export const slideLeftItem = {
   hidden: {
-    x: -20,
+    x: -30,
     opacity: 0,
   },
   visible: {
@@ -50,7 +51,7 @@ export const slideLeftItem = {
     opacity: 1,
   },
   exit: {
-    x: -20,
+    x: -30,
     opacity: 0,
   },
 };

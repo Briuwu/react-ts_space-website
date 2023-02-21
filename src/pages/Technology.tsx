@@ -49,7 +49,7 @@ const Technology = () => {
         <span>03</span> space launch 101
       </motion.h1>
       {selectedTechnology.map((el) => (
-        <AnimatePresence mode="wait">
+        <AnimatePresence key={el.name} mode="wait">
           <motion.div
             variants={container}
             initial="hidden"
