@@ -53,7 +53,7 @@ const Crew = () => {
   const selectedImg = selectedCrew
     .map((eachCrew) => {
       let image = eachCrew.images.png.replace(".", "");
-      let imageSrc = "./src".concat(image);
+      let imageSrc = "..".concat(image);
       return imageSrc;
     })
     .toString();
@@ -88,7 +88,7 @@ const Crew = () => {
             <div className="crew__img">
               <motion.img
                 variants={slideUpItem}
-                src={el.images.png}
+                src={selectedImg}
                 alt={el.name}
               />
             </div>

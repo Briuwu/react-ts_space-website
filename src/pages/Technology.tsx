@@ -44,14 +44,14 @@ const Technology = () => {
   const selectedImgLandscape = selectedTechnology
     .map((eachTech) => {
       let image = eachTech.images.landscape.replace(".", "");
-      let imageSrc = "./src".concat(image);
+      let imageSrc = "..".concat(image);
       return imageSrc;
     })
     .toString();
   const selectedImgPortrait = selectedTechnology
     .map((eachTech) => {
       let image = eachTech.images.portrait.replace(".", "");
-      let imageSrc = "./src".concat(image);
+      let imageSrc = "..".concat(image);
       return imageSrc;
     })
     .toString();
@@ -90,13 +90,13 @@ const Technology = () => {
             <motion.img
               variants={slideLeftItem}
               className="technology__img mobile"
-              src={el.images.landscape}
+              src={selectedImgLandscape}
               alt={el.name}
             />
             <motion.img
               variants={slideLeftItem}
               className="technology__img desktop"
-              src={el.images.portrait}
+              src={selectedImgPortrait}
               alt={el.name}
             />
             <div className="technology__info flex">

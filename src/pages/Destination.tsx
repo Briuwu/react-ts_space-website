@@ -61,7 +61,7 @@ const Destination = () => {
   const selectedImg = selectedDestination
     .map((eachDestination) => {
       let image = eachDestination.images.png.replace(".", "");
-      let imageSrc = "./src".concat(image);
+      let imageSrc = "..".concat(image);
       return imageSrc;
     })
     .toString();
@@ -98,7 +98,7 @@ const Destination = () => {
             <motion.img
               variants={slideLeftItem}
               className="destination__img"
-              src={el.images.png}
+              src={selectedImg}
               alt={el.name}
             />
             <div className="destination__info">
