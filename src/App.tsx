@@ -16,7 +16,7 @@ function App() {
       <Navbar />
       <main className={`main theme--${pathname.replace("/", "")}`}>
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/" element={<Home />} />
           <Route path="home" element={<Home />} />
           <Route path="destination" element={<Destination />} />
           <Route path="crew" element={<Crew />} />
