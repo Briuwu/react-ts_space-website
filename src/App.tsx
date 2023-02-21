@@ -1,6 +1,12 @@
+import { useLocation, Routes, Route, Navigate } from "react-router-dom";
+import { lazy } from "react";
 import Navbar from "./components/Navbar";
-import { Outlet, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import ErrorPage from "./components/ErrorPage";
+
+const Home = lazy(() => import("./pages/Home"));
+const Destination = lazy(() => import("./pages/Destination"));
+const Crew = lazy(() => import("./pages/Crew"));
+const Technology = lazy(() => import("./pages/Technology"));
 
 function App() {
   let { pathname } = useLocation();
@@ -9,7 +15,14 @@ function App() {
     <div className="app">
       <Navbar />
       <main className={`main theme--${pathname.replace("/", "")}`}>
-        <Outlet />
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="home" element={<Home />} />
+          <Route path="destination" element={<Destination />} />
+          <Route path="crew" element={<Crew />} />
+          <Route path="technology" element={<Technology />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
       </main>
     </div>
   );
