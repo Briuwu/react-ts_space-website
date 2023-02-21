@@ -308,7 +308,7 @@ body {
   background-image: url("../assets/home/background-home-desktop.jpg");
 }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 56.25rem) {
   .main > section {
     margin-top: 4.125rem;
   }
@@ -341,7 +341,7 @@ body {
     background-image: url("../assets/technology/background-technology-tablet.jpg");
   }
 }
-@media (min-width: 62.5rem) {
+@media (min-width: 56.25rem) {
   .main.theme--home {
     background-image: url("../assets/home/background-home-desktop.jpg");
   }
@@ -399,7 +399,7 @@ body {
   outline-offset: -3px;
 }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 56.25rem) {
   .home {
     margin-top: 7em;
     grid-template-columns: 1fr 1fr;
@@ -478,7 +478,7 @@ body {
   font-size: 1.75rem;
 }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 56.25rem) {
   .destination {
     gap: 4rem;
   }
@@ -547,7 +547,7 @@ body {
     grid-row: 2;
   }
 }
-@media (min-width: 62.5rem) {
+@media (min-width: 56.25rem) {
   .crew {
     gap: 0;
   }
@@ -621,7 +621,7 @@ body {
   font-size: clamp(0.875rem, 5vw, 1rem);
 }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 56.25rem) {
   .technology {
     text-align: left;
     max-width: 1440px;
