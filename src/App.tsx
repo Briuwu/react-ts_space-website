@@ -1,4 +1,4 @@
-import { useLocation, Routes, Route, Navigate } from "react-router-dom";
+import { useLocation, Routes, Route } from "react-router-dom";
 import { lazy } from "react";
 import Navbar from "./components/Navbar";
 import ErrorPage from "./components/ErrorPage";
