@@ -34,8 +34,12 @@ $md-lg: var.$md-lg;
     &-each {
       aspect-ratio: 1;
       width: func.fluid(40, 5vw, 80);
-      border: 1px solid var.$color-100;
+      border: 1px solid var.$color-400;
       border-radius: 50%;
+
+      &:hover {
+        border-color: var.$color-100;
+      }
 
       &.active {
         background-color: var.$color-100;
@@ -83,6 +87,7 @@ $md-lg: var.$md-lg;
       &.desktop {
         display: inline-block;
         width: func.rem(515);
+        height: func.rem(527);
       }
 
       &.mobile {

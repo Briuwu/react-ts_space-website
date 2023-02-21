@@ -143,10 +143,6 @@ ul {
   margin-inline: auto;
 }
 
-.header__container {
-  max-width: 1440px;
-}
-
 .header {
   position: absolute;
   left: 0;
@@ -514,7 +510,7 @@ body {
   border-bottom: 2px solid #383b4b;
 }
 .crew__img img {
-  height: clamp(13.9375rem, 55vw, 44.5rem);
+  height: clamp(13.9375rem, 60vw, 44.5rem);
   margin-inline: auto;
 }
 .crew__selection {
@@ -606,8 +602,11 @@ body {
 .technology__selection-each {
   aspect-ratio: 1;
   width: clamp(2.5rem, 5vw, 5rem);
-  border: 1px solid #ffffff;
+  border: 1px solid #383b4b;
   border-radius: 50%;
+}
+.technology__selection-each:hover {
+  border-color: #ffffff;
 }
 .technology__selection-each.active {
   background-color: #ffffff;
@@ -649,6 +648,7 @@ body {
   .technology__img.desktop {
     display: inline-block;
     width: 32.1875rem;
+    height: 32.9375rem;
   }
   .technology__img.mobile {
     display: none;

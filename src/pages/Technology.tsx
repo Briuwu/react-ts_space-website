@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Section from "../components/Section";
 import DATA from "../data/data.json";
+import { motion, AnimatePresence } from "framer-motion";
+import { container, slideUpItem, slideLeftItem } from "../Transitions";
 
 const Technology = () => {
   const [technology, setTechnology] = useState(DATA.technology);
@@ -28,7 +30,8 @@ const Technology = () => {
   const technologyChoices = technology.map((eachTech) => eachTech.name);
 
   const technologyChoicesElement = technologyChoices.map((eachTech, index) => (
-    <button
+    <motion.button
+      variants={slideUpItem}
       className={`technology__selection-each ${
         selectTechnology === eachTech ? "active" : ""
       }`}
@@ -37,37 +40,54 @@ const Technology = () => {
     >
       <span className="sr-only">{eachTech}</span>
       {index + 1}
-    </button>
+    </motion.button>
   ));
 
   return (
     <Section classProps="technology grid">
-      <h1 className="section__title">
+      <motion.h1 variants={slideUpItem} className="section__title">
         <span>03</span> space launch 101
-      </h1>
+      </motion.h1>
       {selectedTechnology.map((el) => (
-        <div className="technology__container grid" key={el.name}>
-          <img
-            className="technology__img mobile"
-            src={selectedImgLandscape}
-            alt={el.name}
-          />
-          <img
-            className="technology__img desktop"
-            src={selectedImgPortrait}
-            alt={el.name}
-          />
-          <div className="technology__info flex">
-            <div className="technology__selection flex">
-              {technologyChoicesElement}
+        <AnimatePresence mode="wait">
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="technology__container grid"
+            key={el.name}
+          >
+            <motion.img
+              variants={slideLeftItem}
+              className="technology__img mobile"
+              src={selectedImgLandscape}
+              alt={el.name}
+            />
+            <motion.img
+              variants={slideLeftItem}
+              className="technology__img desktop"
+              src={selectedImgPortrait}
+              alt={el.name}
+            />
+            <div className="technology__info flex">
+              <div className="technology__selection flex">
+                {technologyChoicesElement}
+              </div>
+              <motion.div className="technology__desc">
+                <motion.span variants={slideUpItem}>
+                  the terminology...
+                </motion.span>
+                <motion.h2 variants={slideUpItem} className="section__heading">
+                  {el.name}
+                </motion.h2>
+                <motion.p variants={slideUpItem} className="section__desc">
+                  {el.description}
+                </motion.p>
+              </motion.div>
             </div>
-            <div className="technology__desc">
-              <span>the terminology...</span>
-              <h2 className="section__heading">{el.name}</h2>
-              <p className="section__desc">{el.description}</p>
-            </div>
-          </div>
-        </div>
+          </motion.div>
+        </AnimatePresence>
       ))}
     </Section>
   );

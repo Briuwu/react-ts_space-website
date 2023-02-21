@@ -4,6 +4,8 @@ import MenuOpen from "../assets/shared/icon-hamburger.svg";
 import MenuClose from "../assets/shared/icon-close.svg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { navContainer } from "../Transitions";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -29,7 +31,12 @@ const Navbar = () => {
   }
 
   return (
-    <header className="header flex">
+    <motion.header
+      variants={navContainer}
+      initial="hidden"
+      animate="visible"
+      className="header flex"
+    >
       <div className="header__logo">
         <Link to="/home">
           <img src={Logo} alt="" />
@@ -46,7 +53,7 @@ const Navbar = () => {
       </button>
 
       <NavItems toggle={toggle} closeOnNavClick={closeOnNavClick} />
-    </header>
+    </motion.header>
   );
 };
 

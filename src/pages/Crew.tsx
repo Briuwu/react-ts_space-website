@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Section from "../components/Section";
 import DATA from "../data/data.json";
+import { motion, AnimatePresence } from "framer-motion";
+import { container, slideUpItem } from "../Transitions";
 
 const Crew = () => {
   const [crew, setCrew] = useState(DATA.crew);
@@ -32,21 +34,45 @@ const Crew = () => {
 
   return (
     <Section classProps="crew grid container">
-      <h1 className="section__title">
+      <motion.h1 variants={slideUpItem} className="section__title">
         <span aria-hidden="true">02</span>meet your crew
-      </h1>
+      </motion.h1>
       {selectedCrew.map((el) => (
-        <div className="crew__container grid" key={el.name}>
-          <div className="crew__img">
-            <img src={selectedImg} alt={el.name} />
-          </div>
-          <div className="crew__info">
-            <div className="crew__selection flex">{crewSelectionsElement}</div>
-            <p className="crew__role">{el.role}</p>
-            <h2 className="section__heading">{el.name}</h2>
-            <p className="section__desc">{el.bio}</p>
-          </div>
-        </div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="crew__container grid"
+            key={el.name}
+          >
+            <div className="crew__img">
+              <motion.img
+                variants={slideUpItem}
+                src={selectedImg}
+                alt={el.name}
+              />
+            </div>
+            <div className="crew__info">
+              <motion.div
+                variants={slideUpItem}
+                className="crew__selection flex"
+              >
+                {crewSelectionsElement}
+              </motion.div>
+              <motion.p variants={slideUpItem} className="crew__role">
+                {el.role}
+              </motion.p>
+              <motion.h2 variants={slideUpItem} className="section__heading">
+                {el.name}
+              </motion.h2>
+              <motion.p variants={slideUpItem} className="section__desc">
+                {el.bio}
+              </motion.p>
+            </div>
+          </motion.div>
+        </AnimatePresence>
       ))}
     </Section>
   );

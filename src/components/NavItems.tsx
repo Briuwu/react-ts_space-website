@@ -1,5 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
+import { slideLeftItem } from "../Transitions";
 
 interface NavItemsProps {
   toggle: Boolean;
@@ -10,7 +12,7 @@ const navItems = ["home", "destination", "crew", "technology"];
 
 const NavItems = ({ toggle, closeOnNavClick }: NavItemsProps) => {
   const navItemsElements = navItems.map((nav, i) => (
-    <li className="nav__items" key={i}>
+    <motion.li variants={slideLeftItem} className="nav__items" key={i}>
       <NavLink
         onClick={closeOnNavClick}
         to={`/${nav}`}
@@ -18,7 +20,7 @@ const NavItems = ({ toggle, closeOnNavClick }: NavItemsProps) => {
       >
         <span aria-hidden="true">0{i}</span> {nav}
       </NavLink>
-    </li>
+    </motion.li>
   ));
 
   return (

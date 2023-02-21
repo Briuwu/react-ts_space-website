@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Section from "../components/Section";
 import DATA from "../data/data.json";
+import { motion, AnimatePresence } from "framer-motion";
+import { container, slideLeftItem, slideUpItem } from "../Transitions";
 
 const Destination = () => {
   const [destination, setDestination] = useState(DATA.destinations);
@@ -34,30 +36,57 @@ const Destination = () => {
 
   return (
     <Section classProps="destination grid container">
-      <h1 className="section__title">
+      <motion.h1 variants={slideUpItem} className="section__title">
         <span aria-hidden="true">01</span>pick your destination
-      </h1>
+      </motion.h1>
       {selectedDestination.map((el) => (
-        <div className="destination__container grid" key={el.name}>
-          <img className="destination__img" src={selectedImg} alt={el.name} />
-          <div className="destination__info">
-            <div className="destination__selection flex">
-              {destinationChoicesElement}
-            </div>
-            <h2 className="section__heading">{el.name}</h2>
-            <p className="section__desc">{el.description}</p>
-            <div className="destination__more flex">
-              <div className="destination__more-distance flex">
-                <p className="subhead">avg. distance</p>
-                <p className="numbers">{el.distance}</p>
+        <AnimatePresence mode="wait">
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="destination__container grid"
+            key={el.name}
+          >
+            <motion.img
+              variants={slideLeftItem}
+              className="destination__img"
+              src={selectedImg}
+              alt={el.name}
+            />
+            <div className="destination__info">
+              <motion.div
+                variants={slideUpItem}
+                className="destination__selection flex"
+              >
+                {destinationChoicesElement}
+              </motion.div>
+              <motion.h2 variants={slideUpItem} className="section__heading">
+                {el.name}
+              </motion.h2>
+              <motion.p variants={slideUpItem} className="section__desc">
+                {el.description}
+              </motion.p>
+              <div className="destination__more flex">
+                <motion.div
+                  variants={slideUpItem}
+                  className="destination__more-distance flex"
+                >
+                  <p className="subhead">avg. distance</p>
+                  <p className="numbers">{el.distance}</p>
+                </motion.div>
+                <motion.div
+                  variants={slideUpItem}
+                  className="destination__more-travel flex"
+                >
+                  <p className="subhead">est. travel time</p>
+                  <p className="numbers">{el.travel}</p>
+                </motion.div>
               </div>
-              <div className="destination__more-travel flex">
-                <p className="subhead">est. travel time</p>
-                <p className="numbers">{el.travel}</p>
-              </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </AnimatePresence>
       ))}
     </Section>
   );
