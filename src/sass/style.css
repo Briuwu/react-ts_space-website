@@ -417,7 +417,7 @@ body {
 }
 .destination__selection {
   justify-content: center;
-  gap: 2em;
+  --gap: 2em;
   padding-bottom: 1em;
 }
 .destination__selection button {
@@ -509,7 +509,7 @@ body {
   border-bottom: 2px solid #383b4b;
 }
 .crew__img img {
-  height: clamp(13.9375rem, 60vw, 44.5rem);
+  height: clamp(13.9375rem, 55vw, 44.5rem);
   margin-inline: auto;
 }
 .crew__selection {
@@ -522,6 +522,10 @@ body {
   width: clamp(0.625rem, 5vw, 0.9375rem);
   border-radius: 50%;
   background-color: #383b4b;
+}
+.crew__selection-each:hover {
+  background-color: #ffffff;
+  opacity: 0.5;
 }
 .crew__selection-each.active {
   background-color: #ffffff;

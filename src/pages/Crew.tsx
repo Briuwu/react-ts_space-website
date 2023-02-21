@@ -6,19 +6,29 @@ const Crew = () => {
   const [crew, setCrew] = useState(DATA.crew);
   const [selectCrew, setSelectCrew] = useState("Douglas Hurley");
 
-  const selectedCrew = crew.filter((each) => {
-    return each.name === selectCrew;
+  const selectedCrew = crew.filter((eachCrew) => {
+    return eachCrew.name === selectCrew;
   });
 
   const selectedImg = selectedCrew
-    .map((item) => {
-      let image = item.images.png.replace(".", "");
+    .map((eachCrew) => {
+      let image = eachCrew.images.png.replace(".", "");
       let imageSrc = "./src".concat(image);
       return imageSrc;
     })
     .toString();
 
-  const crewSelections = crew.map((each) => each.name);
+  const crewSelections = crew.map((eachCrew) => eachCrew.name);
+
+  const crewSelectionsElement = crewSelections.map((each) => (
+    <button
+      className={`crew__selection-each ${each === selectCrew ? "active" : ""}`}
+      key={each}
+      onClick={() => setSelectCrew(each)}
+    >
+      <span className="sr-only">Select {each}</span>
+    </button>
+  ));
 
   return (
     <Section classProps="crew">
@@ -31,19 +41,7 @@ const Crew = () => {
             <img src={selectedImg} alt={el.name} />
           </div>
           <div className="crew__info">
-            <div className="crew__selection flex">
-              {crewSelections.map((each) => (
-                <button
-                  className={`crew__selection-each ${
-                    each === selectCrew ? "active" : ""
-                  }`}
-                  key={each}
-                  onClick={() => setSelectCrew(each)}
-                >
-                  <span className="sr-only">Select {each}</span>
-                </button>
-              ))}
-            </div>
+            <div className="crew__selection flex">{crewSelectionsElement}</div>
             <p className="crew__role">{el.role}</p>
             <h2 className="crew__name">{el.name}</h2>
             <p className="crew__bio">{el.bio}</p>

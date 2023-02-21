@@ -21,7 +21,7 @@ $md-lg: var.$md-lg;
     border-bottom: 2px solid var.$color-400;
 
     img {
-      height: func.fluid(223, 60vw, 712);
+      height: func.fluid(223, 55vw, 712);
       margin-inline: auto;
     }
   }
@@ -36,6 +36,11 @@ $md-lg: var.$md-lg;
       width: func.fluid(10, 5vw, 15);
       border-radius: 50%;
       background-color: var.$color-400;
+
+      &:hover {
+        background-color: var.$color-100;
+        opacity: 0.5;
+      }
 
       &.active {
         background-color: var.$color-100;

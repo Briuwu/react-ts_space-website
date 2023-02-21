@@ -6,19 +6,31 @@ const Destination = () => {
   const [destination, setDestination] = useState(DATA.destinations);
   const [selectDestination, setSelectDestination] = useState("Moon");
 
-  const selectedDestination = destination.filter((prev) => {
-    return prev.name === selectDestination;
+  const selectedDestination = destination.filter((eachDestination) => {
+    return eachDestination.name === selectDestination;
   });
 
   const selectedImg = selectedDestination
-    .map((item) => {
-      let image = item.images.png.replace(".", "");
+    .map((eachDestination) => {
+      let image = eachDestination.images.png.replace(".", "");
       let imageSrc = "./src".concat(image);
       return imageSrc;
     })
     .toString();
 
-  const destinationChoices = destination.map((each) => each.name);
+  const destinationChoices = destination.map(
+    (eachDestination) => eachDestination.name
+  );
+
+  const destinationChoicesElement = destinationChoices.map((each) => (
+    <button
+      key={each}
+      className={each === selectDestination ? "active" : ""}
+      onClick={() => setSelectDestination(each)}
+    >
+      {each}
+    </button>
+  ));
 
   return (
     <Section classProps="destination">
@@ -30,15 +42,7 @@ const Destination = () => {
           <img className="destination__img" src={selectedImg} alt={el.name} />
           <div className="destination__info">
             <div className="destination__selection flex">
-              {destinationChoices.map((each) => (
-                <button
-                  key={each}
-                  className={each === selectDestination ? "active" : ""}
-                  onClick={() => setSelectDestination(each)}
-                >
-                  {each}
-                </button>
-              ))}
+              {destinationChoicesElement}
             </div>
             <h2 className="destination__name">{el.name}</h2>
             <p className="destination__desc">{el.description}</p>
