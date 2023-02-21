@@ -90,13 +90,13 @@ const Technology = () => {
             <motion.img
               variants={slideLeftItem}
               className="technology__img mobile"
-              src={selectedImgLandscape}
+              src={el.images.landscape}
               alt={el.name}
             />
             <motion.img
               variants={slideLeftItem}
               className="technology__img desktop"
-              src={selectedImgPortrait}
+              src={el.images.portrait}
               alt={el.name}
             />
             <div className="technology__info flex">

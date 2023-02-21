@@ -88,7 +88,7 @@ const Crew = () => {
             <div className="crew__img">
               <motion.img
                 variants={slideUpItem}
-                src={selectedImg}
+                src={el.images.png}
                 alt={el.name}
               />
             </div>

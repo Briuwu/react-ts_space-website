@@ -98,7 +98,7 @@ const Destination = () => {
             <motion.img
               variants={slideLeftItem}
               className="destination__img"
-              src={selectedImg}
+              src={el.images.png}
               alt={el.name}
             />
             <div className="destination__info">
