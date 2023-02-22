@@ -96,12 +96,21 @@ body {
 // BACKGROUND IMAGES FOR DIFFERENT VIEWPORTS
 @media (max-width: $md-sm) {
   @include tool.background-images("mobile");
+  .main {
+    background-image: url("../assets/home/background-home-mobile.jpg");
+  }
 }
 
 @media (min-width: $md-sm) {
   @include tool.background-images("tablet");
+  .main {
+    background-image: url("../assets/home/background-home-tablet.jpg");
+  }
 }
 
 @media (min-width: $md-lg) {
   @include tool.background-images("desktop");
+  .main {
+    background-image: url("../assets/home/background-home-desktop.jpg");
+  }
 }
