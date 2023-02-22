@@ -61,12 +61,12 @@ $md-lg: var.$md-lg;
 
 @media (min-width: $md-lg) {
   .home {
-    margin-top: 7em;
     grid-template-columns: 1fr 1fr;
     align-items: flex-end;
 
     &__desc {
       text-align: left;
+      margin-top: 5em;
 
       &-info {
         max-width: func.rem(450);

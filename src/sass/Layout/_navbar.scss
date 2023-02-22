@@ -14,7 +14,7 @@ $md-lg: var.$md-lg;
   font-size: var.$text-sub-16;
 
   &__logo {
-    padding: func.rem(16);
+    padding: func.fluid(16, 3vw, 64);
   }
 
   &__btn {

@@ -138,7 +138,7 @@ ul {
 }
 
 .container {
-  padding-inline: clamp(1rem, 5vw, 3.25rem);
+  padding-inline: clamp(1rem, 10vw, 7.5rem);
   max-width: 90rem;
   margin-inline: auto;
 }
@@ -152,7 +152,7 @@ ul {
   font-size: 1rem;
 }
 .header__logo {
-  padding: 1rem;
+  padding: clamp(1rem, 3vw, 4rem);
 }
 .header__btn {
   display: none;
@@ -402,12 +402,12 @@ body {
 
 @media (min-width: 56.25rem) {
   .home {
-    margin-top: 7em;
     grid-template-columns: 1fr 1fr;
     align-items: flex-end;
   }
   .home__desc {
     text-align: left;
+    margin-top: 5em;
   }
   .home__desc-info {
     max-width: 28.125rem;

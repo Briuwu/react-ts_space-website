@@ -40,6 +40,7 @@ const Navbar = () => {
       <div className="header__logo">
         <Link to="/home">
           <img src={Logo} alt="" />
+          <span className="sr-only">Space Tourism Logo</span>
         </Link>
       </div>
 
